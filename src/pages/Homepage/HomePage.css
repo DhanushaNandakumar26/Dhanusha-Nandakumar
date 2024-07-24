@@ -1,5 +1,6 @@
-
-.BannerSection{
-    width: 100%;
+.contentSectionContainer{
     display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: #fff;
 }

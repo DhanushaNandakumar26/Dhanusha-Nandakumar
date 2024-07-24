@@ -1,27 +1,21 @@
-import React from 'react'
-import Navbar from '../../components/Navbar/Navbar'
-import WelcomeText from '../../components/WelcomeText/WelcomeText'
-import ImageBanner from '../../components/ImageBanner/ImageBanner'
-import './HomePage.css'
-import BannerSection from '../../components/BannerSection/BannerSection'
+import React from 'react';
+import { Link } from 'react-scroll';
+import './Homepage.css';
+import Navbar from '../../components/Navbar/Navbar';
+import Banner from '../../components/Banner/Banner';
+import Overview from '../../components/Overview/Overview';
+// import { ProfilePic } from '../../assets/dhanusha.jpg'
 
 const Homepage = () => {
   return (
     <div>
-       <div className='HomePageTopSection'>
-       <Navbar/>
-       <div className='Banner'>
-          <BannerSection/>
-       </div>
-       {/* <div className='BannerSection'>
-     <WelcomeText/>
-       <ImageBanner/>
-
-     </div> */}
-       </div>
-    
+         <Navbar />
+        <div className='contentSectionContainer'>
+        <Banner/>
+        <Overview/>
+        </div>
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

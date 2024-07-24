@@ -1,40 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-import NavbarLogo from '../../assets/portfolio-logo.png';
-import backgroundImage from "../../assets/bg.jpg"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
-  //   <div className="navbar">
-  //   <div className="navbar-logo"></div>
-  //   <div className="navbar-menu">
-    //  <ul className="navbar-list">
-    //     <li>Home</li>
-    //     <li>About</li>
-    //     <li>Resume</li>
-    //   </ul>
-  //   </div>
-  // </div>
-  <div>
-    <nav>
-  <a href="#">No mask</a>
-  <ul className="navbar-list">
-        <li>Home</li>
-        <li>About</li>
-        <li>Resume</li>
-      </ul>
-  {/* <ul class="list">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul> */}
-  {/* <button class="search">Search</button>
-  <button class="menu">Menu</button> */}
-</nav>
-<img src={backgroundImage} alt=""></img>
-  </div>
-  )
-}
+  const [scrolled, setScrolled] = useState(false);
 
-export default Navbar
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-brand"></div>
+      <ul className="navbar-menu">
+        <li className="navbar-item">
+            <Link to="/" className="navbar-link">Home</Link>
+        </li>
+        <li className="navbar-item">
+            <Link to="/experience" className="navbar-link">Experience</Link>
+        </li>
+        <li className="navbar-item">
+            <Link to="/projects" className="navbar-link">Projects</Link>
+        </li>
+        {/* <li className="navbar-item">
+            <Link to="/contact" className="navbar-link">Contact</Link>
+        </li> */}
+        </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
