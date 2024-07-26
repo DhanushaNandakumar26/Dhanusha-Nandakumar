@@ -1,9 +1,153 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react';
+import './ExperienceSidebar.css';
 
 const ExperienceSidebar = () => {
-  return (
-    <div>ExperienceSidebar</div>
-  )
-}
+    const [selectedMenu, setSelectedMenu] = useState('experience');
+    const experienceContentRef = useRef(null);
+    const internshipContentRef = useRef(null);
+    const projectContentRef = useRef(null);
 
-export default ExperienceSidebar
+
+
+    const handleScroll = () => {
+        const viewportHeight = window.innerHeight;
+
+        const experienceTop = experienceContentRef.current.getBoundingClientRect().top;
+        const internshipTop = internshipContentRef.current.getBoundingClientRect().top;
+        const projectTop = projectContentRef.current.getBoundingClientRect().top;
+
+        if (projectTop < viewportHeight / 2) {
+            setSelectedMenu('project');
+        } else if (internshipTop < viewportHeight / 2) {
+            setSelectedMenu('internship');
+        } else if (experienceTop < viewportHeight / 2) {
+            setSelectedMenu('experience');
+        }
+    };
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleMenuClick = (menu) => {
+        setSelectedMenu(menu);
+        if (menu === 'experience') {
+            window.scrollTo({ top: experienceContentRef.current.offsetTop, behavior: 'smooth' });
+        } else if (menu === 'internship') {
+            window.scrollTo({ top: internshipContentRef.current.offsetTop, behavior: 'smooth' });
+        } else if (menu === 'project') {
+            window.scrollTo({ top: projectContentRef.current.offsetTop, behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <div className="experience-section">
+            <div className="menu">
+                <div
+                    className={`menu-item ${selectedMenu === 'experience' ? 'selected' : ''}`}
+                    onClick={() => handleMenuClick('experience')}
+                >
+                    Experience
+                </div>
+                <div
+                    className={`menu-item ${selectedMenu === 'internship' ? 'selected' : ''}`}
+                    onClick={() => handleMenuClick('internship')}
+                >
+                    Internship
+                </div>
+                <div
+                    className={`menu-item ${selectedMenu === 'project' ? 'selected' : ''}`}
+                    onClick={() => handleMenuClick('project')}
+                >
+                    Projects
+                </div>
+            </div>
+            <div className="contentSec">
+                <div ref={experienceContentRef} className={`content-item ${selectedMenu === 'experience' ? 'visible' : ''}`}>
+                    <h2>Software Engineer <li className='companyName'><span>Pumex Infotech Pvt. Ltd.</span></li> </h2>
+                    <span><b>July 2022 - Present</b></span>
+                    <p>With over two years of professional experience as a software developer at Pumex Infotech Pvt. Ltd., I have cultivated a strong foundation in both front-end and back-end technologies. My expertise spans across HTML, CSS, JavaScript, React.js, React with Typescript, Tailwind CSS for creating dynamic and responsive user interfaces, as well as Node.js and Express for building robust server-side applications. I've worked extensively with Redux for state management and have a solid grasp of database technologies like MongoDB and MySQL. Throughout my career, I have contributed to diverse projects, which have honed my problem-solving skills and adaptability. My experience has equipped me with a comprehensive understanding of software development practices and a commitment to delivering high-quality solutions.</p>
+                    <span className='skillHead'><b>Skills</b></span>
+                    <div className="skills">
+                        <div className="skill-tag">React.js</div>
+                        <div className="skill-tag">Node.js</div>
+                        <div className="skill-tag">Express</div>
+                        <div className="skill-tag">MongoDB</div>
+                        <div className="skill-tag">HTML</div>
+                        <div className="skill-tag">CSS</div>
+                        <div className="skill-tag">Sass</div>
+                        <div className="skill-tag">Tailwind CSS</div>
+                        <div className="skill-tag">JavaScript</div>
+                        <div className="skill-tag">Typescript</div>
+                        <div className="skill-tag">Redux</div>
+                        <div className="skill-tag">Redux Toolkit</div>
+                        <div className="skill-tag">Context API</div>
+                        <div className="skill-tag">RESTful APIs</div>
+                        <div className="skill-tag">Debugging</div>
+                        <div className="skill-tag">Agile Methodologies</div>
+                        <div className="skill-tag">Verion Control(Git)</div>
+                        <div className="skill-tag">Flux</div>
+                        <div className="skill-tag">AWS</div>
+                        <div className="skill-tag">Wordpress</div>
+                    </div>
+                </div>
+                <div ref={internshipContentRef} className={`content-item ${selectedMenu === 'internship' ? 'visible' : ''}`}>
+                    <h2>Software Engineer Intern <li className='companyName'><span>Pumex Infotech Pvt. Ltd.</span></li> </h2>
+                    <span><b>April - July 2022</b></span>
+                    <p>During my 3.5-month internship as a Software Engineer at Pumex Infotech Pvt. Ltd., I gained hands-on experience in both front-end and back-end development, collaborating closely with senior developers and participating in Agile practices. A notable project I worked on was Billezy, a utility management system developed as a sample demo project. For Billezy, I utilized HTML, CSS, and React.js to create a responsive user interface, and Node.js with Express for a robust back-end. The project also involved setting up a MySQL database and developing RESTful APIs for seamless data flow. This internship enhanced my technical skills, teamwork abilities, and understanding of real-world software development processes.</p>
+                    <span className='skillHead'><b>Skills</b></span>
+                    <div className="skills">
+                        <div className="skill-tag">HTML</div>
+                        <div className="skill-tag">CSS</div>
+                        <div className="skill-tag">Sass</div>
+                        <div className="skill-tag">React.js</div>
+                        <div className="skill-tag">Node.js</div>
+                        <div className="skill-tag">Express</div>
+                        <div className="skill-tag">Bootstrap</div>
+                        <div className="skill-tag">MySQL</div>
+                        <div className="skill-tag">ORM</div>
+                        <div className="skill-tag">Responsiveness</div>
+                        <div className="skill-tag">Frontend Development</div>
+                        <div className="skill-tag">Software Development Life Cycle</div>
+                    </div>
+                </div>
+                <div ref={projectContentRef} className={`content-item ${selectedMenu === 'project' ? 'visible' : ''}`}>
+                    <>
+                        <h2>Recipe Finder<li className='companyName'><span>MCA Academic project in 2022</span></li> </h2>
+                        <span><b>Deep learning - Faster RCNN project</b></span>
+                        <p>People often tire of eating the same foods repeatedly, leading them to opt for restaurant or junk food, which negatively impacts their health due to the suboptimal quality of ingredients. The proposed system addresses this by suggesting recipes based on the vegetables available to the user. By scanning the available vegetables, the web application quickly displays a list of possible recipes. A key feature of the project is using a Deep Learning approach with Faster RCNN to detect multiple objects, accurately identifying vegetables and discarding similar-looking non-vegetable items. The system leverages the "Fruits and Vegetables Image Recognition Dataset" from Kaggle to enhance its predictive capabilities. This web application aims to provide healthier eating options by making meal planning more convenient and tailored to the user's available ingredients.
+                        </p>
+                        <span className='skillHead'><b>Skills</b></span>
+                        <div className="skills">
+                            <div className="skill-tag">Python</div>
+                            <div className="skill-tag">Faster RCNN</div>
+                            <div className="skill-tag">Image Annotation</div>
+                            <div className="skill-tag">HTML</div>
+                            <div className="skill-tag">CSS</div>
+                        </div>
+                    </>
+                    <>
+                        <h2>Care and Cure<li className='companyName'><span>BCA Academic project in 2020</span></li> </h2>
+                        <span><b>Node js project</b></span>
+                        <p>The "Care and Cure" project is a web-based application that provides detailed information about hospitals, including services and contact details. It offers a platform for online consultations, allowing patients to connect with doctors remotely. The application also facilitates knowledge sharing and communication regarding blood donation requests, enabling users to post and respond to urgent needs for blood. With a user-friendly interface, it ensures a seamless and secure experience for users. Overall, "Care and Cure" aims to enhance healthcare accessibility and community support.
+                        </p>
+                        <span className='skillHead'><b>Skills</b></span>
+                        <div className="skills">
+                            <div className="skill-tag">HTML</div>
+                            <div className="skill-tag">CSS</div>
+                            <div className="skill-tag">Javascript</div>
+                            <div className="skill-tag">Node Js</div>
+                            <div className="skill-tag">MySQL</div>
+                        </div>
+                    </>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ExperienceSidebar;

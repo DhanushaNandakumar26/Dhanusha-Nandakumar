@@ -1,25 +1,24 @@
-.experienceMain{
+.experienceMain {
     width: 100%;
     height: 100vh;
     display: flex;
     background-color: #f3f0ef;
 }
 
-.experienceLeftContainer{
-    /* background-color: #000; */
-    width: 35%;
+.experienceLeftContainer {
+    width: 30%;
     height: 80vh;
     display: flex;
     justify-content: left;
     align-items: center;
     text-align: center;
     background: #F3E4DD;
-    padding: 4% 0% 0% 4%
-
-    /* padding: 10% 5% 10% 10%; */
+    padding: 4% 0% 0% 4%;
+    position: fixed;
+    border-bottom-right-radius: 1rem;
 }
 
-.experienceLeftContainer span{
+.experienceLeftContainer span {
     width: 65%;
     color: #603620;
     font-family: "Arsenal SC", sans-serif;
@@ -27,15 +26,21 @@
     padding: 10% 5%;
 }
 
-.experienceLeftContainer img{
+.experienceLeftContainer img {
     width: 100%;
     height: 100%;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
 }
-  
-  .experienceRightContainer {
-    width: 80%;
+
+.experienceRightContainer {
+    width: 60%;
     color: #333;
-    padding: 50px;
-    text-align: center;
-  }
-  
+    padding: 0 50px;
+    text-align: start;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    top: 25%;
+    left: 35%;
+}

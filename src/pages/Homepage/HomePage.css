@@ -1,7 +1,6 @@
-.contentSectionContainer{
+.contentSectionContainer {
     display: flex;
     flex-direction: column;
-    /* gap: 3rem; */
     background-color: #fff;
 }
 
@@ -11,41 +10,40 @@
     width: 100%;
     display: flex !important;
     justify-content: center;
-  }
-  
-  .slick-dots li button:before {
-    color: #fff; /* Adjust this color based on your image background */
-  }
+}
 
-  .slick-prev, .slick-next {
+.slick-dots li button:before {
+    color: #fff;
+}
+
+.slick-prev,
+.slick-next {
     position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust to center properly */
-    color: #fff; /* Adjust this color based on your image background */
-    font-size: 24px; /* Adjust this value to make the icons larger */
-    width: 40px; /* Adjust width as needed */
-    height: 40px; /* Adjust height as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
     transform: scale(1.3) !important;
-  }
-  
-  .slick-prev {
-    left: 2rem !important; /* Adjust this value as needed */
-    width: 20px;
-  }
-  
-  .slick-next {
-    right: 2rem !important; /* Adjust this value as needed */
-    width: 20px;
-  }
+}
 
-  .slick-prev:before, .slick-next:before {
-    font-size: 24px !important; /* Ensure this matches the font size you set above */
-    color: #603620 !important; /* Adjust this color based on your image background */
-  }
-  
-  
-  
+.slick-prev {
+    left: 2rem !important;
+    width: 20px;
+}
+
+.slick-next {
+    right: 2rem !important;
+    width: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 24px !important;
+    color: #603620 !important;
+}
