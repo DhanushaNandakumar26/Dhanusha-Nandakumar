@@ -34,13 +34,13 @@
     position: relative;
     bottom: 10px;
     top: 20%;
-    right: 105%;
-    width: 29vw;
+    right: 80%;
+    width: 23vw;
     height: 28.8vw;
     background-color: #742409;
 }
 
 .overViewImageContainer img {
-    width: 29vw;
+    width: 23vw;
     height: 28.8vw;
 }

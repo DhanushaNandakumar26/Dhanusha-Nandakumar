@@ -1,6 +1,6 @@
 import React from 'react';
 import './Experience.css';
-import lady from '../../assets/bgImage1.jpg'
+import lady from '../../assets/dhanusha2.jpg'
 import ExperienceSidebar from '../../components/ExperienceSidebar/ExperienceSidebar';
 import Navbar from '../../components/Navbar/Navbar';
 

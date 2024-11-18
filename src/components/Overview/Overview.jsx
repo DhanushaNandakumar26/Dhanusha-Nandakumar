@@ -1,6 +1,6 @@
 import React from 'react';
 import './Overview.css';
-import ladyPic from '../../assets/lady-pic2.jpg';
+import ladyPic from '../../assets/dhanusha.jpg';
 import ProfessionalBackground from '../ProfessionalBackground/ProfessionalBackground';
 
 const Overview = () => {

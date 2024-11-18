@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import Resume from '../../assets/Dhanusha-Nandakumar-Resume.pdf'
+import Resume from '../../assets/Dhanusha-Nandakumar.pdf'
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
