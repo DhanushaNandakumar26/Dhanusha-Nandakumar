@@ -160,7 +160,7 @@ const ExperienceSidebar = () => {
                         </div>
                     </>
                 <>
-                        <h2>Data management and connectivity application<li className='companyName'><span>Frontend Engineer</span></li> </h2>
+                        <h2>Data management application<li className='companyName'><span>Frontend Engineer</span></li> </h2>
                         <span><b>React with Typescript</b></span>
                         <p>
                         This web-based application is designed to streamline Starlink order processing, enhance connectivity solutions, and manage industrial data efficiently. It empowers organizations to optimize network connections and ensure seamless data flow, catering to industries that require reliable and high-performance connectivity. By integrating advanced management tools, the platform simplifies operations and enhances decision-making. Its focus on efficiency and reliability makes it a vital solution for industries dependent on uninterrupted network access.

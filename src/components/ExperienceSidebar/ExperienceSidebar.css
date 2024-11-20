@@ -62,6 +62,12 @@
     font-size: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill-tag:hover{
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .skills {

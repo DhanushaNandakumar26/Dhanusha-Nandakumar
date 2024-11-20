@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.css';
-import ladyPic from '../../assets/lady-pic1.jpeg';
+import ladyPic from '../../assets/lady-pic1.png';
 
 const Banner = () => {
     return (
