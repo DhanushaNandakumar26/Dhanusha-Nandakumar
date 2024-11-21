@@ -31,7 +31,7 @@ const Navbar = () => {
                 </li>
                 <li className="navbar-item">
 
-                    <a href={Resume} className="navbar-link" download>Resume</a>
+                    <a href={Resume} className="navbar-link" download="Dhanusha_Nandakumar.pdf">Resume</a>
                 </li>
             </ul>
         </nav>
